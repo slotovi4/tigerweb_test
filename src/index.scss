@@ -1,5 +1,18 @@
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
 body {
   margin: 0;
   padding: 0;
+}
+
+html {
+  font-size: 14px;
   font-family: sans-serif;
 }

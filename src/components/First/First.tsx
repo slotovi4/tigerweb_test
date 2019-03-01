@@ -2,7 +2,6 @@ import * as React from "react";
 import { cn } from "@bem-react/classname";
 
 import "./First.scss";
-import logo from "./logo.svg";
 
 export default class First extends React.Component {
   public render() {
@@ -11,7 +10,6 @@ export default class First extends React.Component {
     return (
       <section className={first()}>
         <header className={first("Header")}>
-          <img src={logo} className={first("Logo")} alt="logo" />
           <h1 className={first("Title")}>Welcome to React</h1>
         </header>
         <p className={first("Intro")}>

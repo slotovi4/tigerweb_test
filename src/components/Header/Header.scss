@@ -1,0 +1,55 @@
+$gray: rgb(237, 237, 237);
+$dark-gray: rgb(204, 204, 204);
+
+.Header {
+  width: 100%;
+  background-color: $gray;
+  border-bottom: 1px solid $dark-gray;
+
+  &-Container {
+    max-width: 1200px;
+    height: 40px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &-Menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    line-height: 40px;
+  }
+
+  &-Link {
+    display: inline-block;
+    margin-left: 20px;
+    cursor: pointer;
+    position: relative;
+  }
+
+  &-Link_active {
+    color: rgb(110, 110, 110);
+  }
+
+  &-Link_active:after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    margin-left: -8px;
+    bottom: 0;
+    border: 5px solid $dark-gray;
+    border-right-color: transparent;
+    border-left-color: transparent;
+    border-top-color: transparent;
+    border-right-width: 8px;
+    border-left-width: 8px;
+  }
+
+  &-Link_type_login {
+    background-color: rgb(248, 248, 248);
+    padding: 0 10px;
+  }
+}
