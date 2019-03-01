@@ -1,18 +1,30 @@
-$gray: rgb(237, 237, 237);
-$dark-gray: rgb(204, 204, 204);
+$gray: #ededed;
+$dark-gray: #cccccc;
+$primary: #ffec00;
 
 .Header {
   width: 100%;
-  background-color: $gray;
-  border-bottom: 1px solid $dark-gray;
+
+  &-HeaderBg {
+    width: 100%;
+    border-bottom: 1px solid $dark-gray;
+    background-color: $gray;
+  }
 
   &-Container {
     max-width: 1200px;
     height: 40px;
     margin: 0 auto;
     display: flex;
-    align-items: center;
+  }
+
+  &-Container_type_menu {
     justify-content: space-between;
+  }
+
+  &-Container_type_info {
+    padding: 20px 0;
+    height: 100%;
   }
 
   &-Menu {
@@ -20,18 +32,37 @@ $dark-gray: rgb(204, 204, 204);
     margin: 0;
     padding: 0;
     height: 100%;
-    line-height: 40px;
   }
 
   &-Link {
     display: inline-block;
-    margin-left: 20px;
     cursor: pointer;
     position: relative;
+    font-size: 13px;
+    transition: all 0.3s ease-out;
+    padding: 0 10px;
+    line-height: 40px;
+    user-select: none;
+  }
+
+  &-Link:hover {
+    background-color: #f8f8f8;
+  }
+
+  &-Link_type_username {
+    border-bottom: 1px dashed;
+    line-height: 14px;
+    padding: 0;
+    margin-right: 10px;
+    font-weight: 600;
+  }
+
+  &-Link_type_username:hover {
+    background: transparent;
   }
 
   &-Link_active {
-    color: rgb(110, 110, 110);
+    color: #6e6e6e;
   }
 
   &-Link_active:after {
@@ -48,8 +79,101 @@ $dark-gray: rgb(204, 204, 204);
     border-left-width: 8px;
   }
 
-  &-Link_type_login {
-    background-color: rgb(248, 248, 248);
-    padding: 0 10px;
+  &-InfoSection {
+    min-width: 210px;
+    position: relative;
+    padding-left: 41px;
+  }
+
+  &-InfoSection_type_logo {
+    min-width: unset;
+    padding: 0;
+  }
+
+  &-InfoSection_type_city:after {
+    content: "";
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    background-image: url("./Header-city.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    left: 0;
+    top: 3px;
+  }
+
+  &-InfoSection_type_time:after {
+    content: "";
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    background-image: url("./Header-time.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    left: 0;
+    top: 3px;
+  }
+
+  &-InfoSection_type_tel:after {
+    content: "";
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    background-image: url("./Header-tel.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    left: 0;
+    top: 3px;
+  }
+
+  &-Logo {
+    margin: 0;
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 38px;
+    border-bottom: 16px solid $primary;
+    user-select: none;
+  }
+
+  &-PreLogo {
+    font-size: 12px;
+    display: inline-block;
+    color: #6e6e6e;
+    margin-top: 9px;
+  }
+
+  &-Text {
+    display: block;
+    line-height: 18px;
+  }
+
+  &-Text_bold {
+    font-weight: 600;
+  }
+
+  &-Call {
+    display: inline-block;
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: 600;
+    position: relative;
+    padding: 10px;
+    background-color: $primary;
+    margin-top: 12px;
+    user-select: none;
+  }
+
+  &-Call:after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    margin-left: -8px;
+    top: -10px;
+    border: 5px solid $primary;
+    border-right-color: transparent;
+    border-left-color: transparent;
+    border-top-color: transparent;
+    border-right-width: 8px;
+    border-left-width: 8px;
   }
 }
