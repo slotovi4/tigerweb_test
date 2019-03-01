@@ -1,0 +1,155 @@
+$gray: #ededed;
+$primary: #ffec00;
+
+.Catalog {
+  width: 100%;
+  border-top: 3px solid $gray;
+  border-bottom: 2px solid $gray;
+
+  &-Container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &-CatalogButton {
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 20px 40px 20px 20px;
+    cursor: pointer;
+    position: relative;
+    background-color: $gray;
+  }
+
+  &-CatalogButton::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    margin-top: -3px;
+    right: 20px;
+    border: 6px solid black;
+    border-right-color: transparent;
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+    border-radius: 2px;
+  }
+
+  &-SearchSection {
+    width: 40%;
+    position: relative;
+  }
+
+  &-SearchButton {
+    position: absolute;
+    right: 2px;
+    top: 2px;
+    width: 35px;
+    height: calc(100% - 4px);
+    background-image: url("./Catalog-search.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: $gray;
+    transition: all 0.3s ease-out;
+    cursor: pointer;
+  }
+
+  &-SearchButton:hover {
+    background-color: $primary;
+  }
+
+  &-SearchButton:hover:after {
+    border-right-color: $primary;
+  }
+
+  &-SearchButton:after {
+    content: "";
+    position: absolute;
+    border: 6px solid $gray;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+    left: -12px;
+    top: 50%;
+    margin-top: -6px;
+    transition: all 0.3s ease-out;
+  }
+
+  &-Search {
+    border: 2px solid $gray;
+    padding: 10px 35px 10px 10px;
+    outline: none;
+    transition: all 0.3s ease-out;
+    height: 32px;
+    width: 100%;
+    position: relative;
+  }
+
+  &-Search::placeholder {
+    color: #c4c4c4;
+  }
+
+  &-Search:focus {
+    border-color: $primary;
+  }
+
+  &-RightSection {
+    padding-right: 20px;
+  }
+
+  &-Button {
+    background-color: $gray;
+    font-weight: 600;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 20px;
+    width: 22px;
+    height: 22px;
+    line-height: 22px;
+    text-align: center;
+    font-size: 12px;
+    margin-left: 28px;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+  }
+
+  &-Button:hover {
+    background-color: $primary;
+  }
+
+  &-Button_type_heart:after {
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 100%;
+    background-image: url("./Catalog-heart.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    left: -28px;
+  }
+
+  &-Button_type_files:after {
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 100%;
+    background-image: url("./Catalog-files.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    left: -28px;
+  }
+
+  &-Button_type_basket:after {
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 100%;
+    background-image: url("./Catalog-basket.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    left: -28px;
+  }
+}
