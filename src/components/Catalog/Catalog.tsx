@@ -4,9 +4,17 @@ import { cn } from "@bem-react/classname";
 // styles
 import "./Catalog.scss";
 
+// components
+import CatalogMenu from "../CatalogMenu/CatalogMenu";
+
 class Catalog extends React.Component {
+  public state = {
+    showMenu: true
+  };
+
   public render() {
     const catalog = cn("Catalog");
+    const { showMenu } = this.state;
 
     return (
       <section className={catalog()}>
@@ -30,6 +38,8 @@ class Catalog extends React.Component {
               На сумму - <b>23 140</b> руб.
             </span>
           </div>
+
+          {showMenu ? <CatalogMenu /> : null}
         </div>
       </section>
     );

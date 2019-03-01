@@ -1,0 +1,261 @@
+$gray: #ededed;
+$primary: #ffec00;
+
+.CatalogMenu {
+  position: absolute;
+  z-index: 100;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  min-height: 100vh;
+  top: 0;
+
+  &-Menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &-Link {
+    display: inline-block;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 20px;
+    cursor: pointer;
+    position: relative;
+    background-color: $gray;
+    transition: all 0.3s ease-out;
+  }
+
+  &-Link:hover {
+    background-color: $primary;
+  }
+
+  &-Link_type_parent {
+    background-color: $primary;
+    padding: 20px 40px 20px 20px;
+  }
+
+  &-Link_type_parent:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    margin-top: -7px;
+    right: 15px;
+    border: 6px solid black;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-radius: 2px;
+  }
+
+  &-Link_type_active {
+    background-color: black;
+    color: $primary;
+  }
+
+  &-Link_type_active:hover {
+    background-color: black;
+  }
+
+  &-Link_type_active:after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    border: 10px solid white;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-radius: 2px;
+    left: 50%;
+    margin-left: -14px;
+    border-right-width: 14px;
+    border-left-width: 14px;
+  }
+
+  &-Content {
+    width: 100%;
+    background-color: white;
+    padding: 30px;
+    display: inline-block;
+  }
+
+  &-Card {
+    display: inline-block;
+    width: 190px;
+    height: 160px;
+    float: left;
+    cursor: pointer;
+    position: relative;
+  }
+
+  &-Card:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($primary, 0.8);
+    opacity: 0;
+    transition: all 0.3s ease-out;
+  }
+
+  &-Card:before {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    border: 10px solid white;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-radius: 2px;
+    left: 50%;
+    margin-left: -14px;
+    border-right-width: 14px;
+    border-left-width: 14px;
+    opacity: 0;
+    z-index: 1;
+  }
+
+  &-Card:hover {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &-Card:hover:after,
+  &-Card:hover:before {
+    opacity: 1;
+  }
+
+  &-Card:hover &-CardImage {
+    height: 100%;
+  }
+
+  &-Card:hover &-CardImage_position_footer {
+    height: 55px;
+  }
+
+  &-Card:hover &-CardTitle {
+    margin: 0;
+    border: 2px solid black;
+    z-index: 1;
+  }
+
+  &-Card_type_footer {
+    margin-right: 20px;
+    background-color: white;
+    width: 190px;
+    height: 100px;
+  }
+
+  &-Card_type_footer::before {
+    border-bottom-color: $gray;
+  }
+
+  &-Card_type_footer:last-child {
+    margin-right: 0;
+  }
+
+  &-CardImage {
+    width: 100%;
+    height: 120px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: all 0.3s ease-out;
+  }
+
+  &-CardImage_position_footer {
+    height: 55px;
+    top: 10px;
+  }
+
+  &-CardImage_type_1 {
+    background-image: url("./Catalog_1.jpg");
+  }
+
+  &-CardImage_type_2 {
+    background-image: url("./Catalog_2.jpg");
+  }
+
+  &-CardImage_type_3 {
+    background-image: url("./Catalog_3.jpg");
+  }
+
+  &-CardImage_type_4 {
+    background-image: url("./Catalog_4.jpg");
+  }
+
+  &-CardImage_type_5 {
+    background-image: url("./Catalog_5.jpg");
+  }
+
+  &-CardImage_type_6 {
+    background-image: url("./Catalog_6.jpg");
+  }
+
+  &-CardImage_type_7 {
+    background-image: url("./Catalog_7.jpg");
+  }
+
+  &-CardImage_type_8 {
+    background-image: url("./Catalog_8.jpg");
+  }
+
+  &-CardImage_type_9 {
+    background-image: url("./Catalog_9.jpg");
+  }
+
+  &-CardImage_type_10 {
+    background-image: url("./Catalog_10.jpg");
+  }
+
+  &-CardImage_type_11 {
+    background-image: url("./Catalog_11.jpg");
+  }
+
+  &-CardImage_type_12 {
+    background-image: url("./Catalog_12.jpg");
+  }
+
+  &-CardImage_type_l1 {
+    background-image: url("./Catalog_l1.jpg");
+  }
+
+  &-CardImage_type_l2 {
+    background-image: url("./Catalog_l2.jpg");
+  }
+
+  &-CardTitle {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 0 auto;
+    margin-top: 110px;
+    width: 150px;
+    position: relative;
+    transition: all 0.3s ease-out;
+    padding: 10px;
+  }
+
+  &-CardTitle_type_footer {
+    margin-top: 65px;
+    width: 160px;
+  }
+
+  &-Footer {
+    padding: 20px;
+    background-color: $gray;
+    display: inline-block;
+    width: 100%;
+  }
+}
