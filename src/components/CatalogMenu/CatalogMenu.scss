@@ -7,7 +7,6 @@ $primary: #ffec00;
   max-width: 1200px;
   margin: 0 auto;
   width: 100%;
-  min-height: 100vh;
   top: 0;
 
   &-Menu {
@@ -105,8 +104,8 @@ $primary: #ffec00;
   &-Card:before {
     content: "";
     position: absolute;
-    bottom: -2px;
-    border: 10px solid white;
+    bottom: 0px;
+    border: 8px solid white;
     border-top-color: transparent;
     border-left-color: transparent;
     border-right-color: transparent;

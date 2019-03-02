@@ -19,7 +19,12 @@ class Catalog extends React.Component {
     return (
       <section className={catalog()}>
         <div className={catalog("Container")}>
-          <span className={catalog("CatalogButton")}>каталог</span>
+          <span
+            className={catalog("CatalogButton")}
+            onClick={() => this.setState({ showMenu: !showMenu })}
+          >
+            каталог
+          </span>
 
           <div className={catalog("SearchSection")}>
             <input
@@ -39,7 +44,9 @@ class Catalog extends React.Component {
             </span>
           </div>
 
-          {showMenu ? <CatalogMenu /> : null}
+          {showMenu ? (
+            <CatalogMenu close={() => this.setState({ showMenu: false })} />
+          ) : null}
         </div>
       </section>
     );
