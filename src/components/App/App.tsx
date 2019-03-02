@@ -8,11 +8,19 @@ import store from "../../store";
 // components
 import Header from "../Header/Header";
 import ItemMenu from "../ItemMenu/ItemMenu";
+import ItemHeader from "../ItemHeader/ItemHeader";
+
+const ItemPage = () => (
+  <React.Fragment>
+    <ItemMenu />
+    <ItemHeader />
+  </React.Fragment>
+);
 
 const MainPage = () => (
   <React.Fragment>
     <Header />
-    <ItemMenu />
+    <ItemPage />
   </React.Fragment>
 );
 
