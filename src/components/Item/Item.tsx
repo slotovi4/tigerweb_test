@@ -5,21 +5,40 @@ import { cn } from "@bem-react/classname";
 import "./Item.scss";
 
 class Item extends React.Component {
+  public state = {
+    sliderImage: "1"
+  };
+
   public render() {
     const item = cn("Item");
+    const { sliderImage } = this.state;
 
     return (
       <section className={item()}>
         <div className={item("Section", { type: "left" })}>
           <div className={item("SliderControlls")}>
-            <div
+            <button
               className={item("SliderControll", { type: "1", active: true })}
+              onClick={this.setSliderImage}
+              value={"1"}
             />
-            <div className={item("SliderControll", { type: "2" })} />
-            <div className={item("SliderControll", { type: "3" })} />
-            <div className={item("SliderControll", { type: "4" })} />
+            <button
+              className={item("SliderControll", { type: "2" })}
+              onClick={this.setSliderImage}
+              value={"2"}
+            />
+            <button
+              className={item("SliderControll", { type: "3" })}
+              onClick={this.setSliderImage}
+              value={"3"}
+            />
+            <button
+              className={item("SliderControll", { type: "4" })}
+              onClick={this.setSliderImage}
+              value={"4"}
+            />
           </div>
-          <div className={item("SliderImage")}>
+          <div className={item("SliderImage", { type: sliderImage })}>
             <div className={item("SliderZoom")} />
           </div>
         </div>
@@ -117,6 +136,27 @@ class Item extends React.Component {
       </section>
     );
   }
+
+  // on clider controll click
+  private setSliderImage = (e: any): void => {
+    const sliderImage = e.target.value;
+    const controlls = document.querySelectorAll(".Item-SliderControll");
+
+    if (sliderImage !== this.state.sliderImage && controlls) {
+      const length = controlls.length;
+
+      // reset style
+      for (let i = 0; i < length; i++) {
+        controlls[i].classList.remove("Item-SliderControll_active");
+      }
+
+      // set current controll style
+      e.target.classList.add("Item-SliderControll_active");
+
+      // set slider image
+      this.setState({ sliderImage });
+    }
+  };
 
   // submit
   private setRate = (e: any): void => {
