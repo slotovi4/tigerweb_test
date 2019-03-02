@@ -153,4 +153,15 @@ $primary: #ffec00;
     background-repeat: no-repeat;
     left: -28px;
   }
+
+  &-MenuSection {
+    display: block;
+    width: 100%;
+  }
+
+  &-Menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
 }

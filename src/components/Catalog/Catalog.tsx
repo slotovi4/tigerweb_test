@@ -9,7 +9,7 @@ import CatalogMenu from "../CatalogMenu/CatalogMenu";
 
 class Catalog extends React.Component {
   public state = {
-    showMenu: true
+    showMenu: false
   };
 
   public render() {

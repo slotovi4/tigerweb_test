@@ -7,12 +7,10 @@ import store from "../../store";
 
 // components
 import Header from "../Header/Header";
-import Catalog from "../Catalog/Catalog";
 
 const MainPage = () => (
   <React.Fragment>
     <Header />
-    <Catalog />
   </React.Fragment>
 );
 
