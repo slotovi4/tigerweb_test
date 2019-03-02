@@ -9,11 +9,13 @@ import store from "../../store";
 import Header from "../Header/Header";
 import ItemMenu from "../ItemMenu/ItemMenu";
 import ItemHeader from "../ItemHeader/ItemHeader";
+import Item from "../Item/Item";
 
 const ItemPage = () => (
   <React.Fragment>
     <ItemMenu />
     <ItemHeader />
+    <Item />
   </React.Fragment>
 );
 

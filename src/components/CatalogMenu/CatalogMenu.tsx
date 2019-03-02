@@ -121,7 +121,7 @@ class CatalogMenu extends React.Component<IProps> {
   }
 
   // on menu link click
-  private menuClick = (e: any) => {
+  private menuClick = (e: any): void => {
     const links = document.querySelectorAll(".CatalogMenu-Link");
     const active = "CatalogMenu-Link_type_active";
 
