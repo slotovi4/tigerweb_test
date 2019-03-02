@@ -7,10 +7,12 @@ import store from "../../store";
 
 // components
 import Header from "../Header/Header";
+import ItemMenu from "../ItemMenu/ItemMenu";
 
 const MainPage = () => (
   <React.Fragment>
     <Header />
+    <ItemMenu />
   </React.Fragment>
 );
 

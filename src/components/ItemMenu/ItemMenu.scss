@@ -1,0 +1,45 @@
+$dark: #6e6e6e;
+$gray: #cccccc;
+
+.ItemMenu {
+  max-width: 1200px;
+  height: 50px;
+  margin: 0 auto;
+
+  &-Menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &-Link {
+    display: inline-block;
+    color: $dark;
+    font-size: 12px;
+    cursor: pointer;
+    line-height: 40px;
+    padding-right: 20px;
+    position: relative;
+  }
+
+  &-Link:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    width: 20px;
+    height: 100%;
+    background-image: url("./ItemMenu-arrow.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 10px;
+  }
+
+  &-Link_current {
+    color: $gray;
+    padding-right: 0;
+  }
+
+  &-Link_current:after {
+    display: none;
+  }
+}
