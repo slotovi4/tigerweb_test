@@ -6,7 +6,8 @@ import "./Item.scss";
 
 class Item extends React.Component {
   public state = {
-    sliderImage: "1"
+    sliderImage: "1",
+    submit: false
   };
 
   public render() {
@@ -48,47 +49,45 @@ class Item extends React.Component {
             <h1 className={item("Name")}>karcher ds 6.000 mediclean</h1>
           </header>
           <div className={item("RateSection")}>
-            <form action="post" onSubmit={this.setRate}>
+            <form action="post">
               <div className={item("StarSection")}>
                 <button
                   className={item("Star")}
                   value="1"
-                  type="submit"
                   onMouseOver={this.starHover}
                   onMouseLeave={this.starLeave}
+                  onClick={this.setRate}
                 />
                 <button
                   className={item("Star")}
                   value="2"
-                  type="submit"
                   onMouseOver={this.starHover}
                   onMouseLeave={this.starLeave}
+                  onClick={this.setRate}
                 />
                 <button
                   className={item("Star")}
                   value="3"
-                  type="submit"
                   onMouseOver={this.starHover}
                   onMouseLeave={this.starLeave}
+                  onClick={this.setRate}
                 />
                 <button
                   className={item("Star")}
                   value="4"
-                  type="submit"
                   onMouseOver={this.starHover}
                   onMouseLeave={this.starLeave}
+                  onClick={this.setRate}
                 />
                 <button
                   className={item("Star")}
                   value="5"
-                  type="submit"
                   onMouseOver={this.starHover}
                   onMouseLeave={this.starLeave}
+                  onClick={this.setRate}
                 />
               </div>
               <span className={item("VoteAverage")}>(123)</span>
-
-              <input className={item("Range")} type="range" min="1" max="5" />
             </form>
             <form action="">
               <span className={item("Comment")}>оставить отзыв</span>
@@ -160,22 +159,58 @@ class Item extends React.Component {
 
   // submit
   private setRate = (e: any): void => {
-    e.preventDefault();
+    const { submit } = this.state;
+    const value = parseInt(e.target.value, 10);
+
+    if (!submit) {
+      const state = this;
+      const form = new FormData();
+      form.append("vote_average", value.toString());
+
+      // send to mail
+      const request = new XMLHttpRequest();
+      request.open("POST", "request/sendItemRate.php", true);
+      request.send(form);
+
+      request.onreadystatechange = function() {
+        if (this.status === 200) {
+          state.setState({ submit: true });
+        }
+      };
+
+      // set style
+      const stars = document.querySelectorAll(".Item-Star");
+      if (stars) {
+        const length = stars.length;
+
+        for (let i = 0; i < length; i++) {
+          if (i < value) {
+            stars[i].classList.add("Item-Star_active");
+          } else {
+            stars[i].classList.remove("Item-Star_active");
+          }
+        }
+      }
+    }
   };
 
   // on star hover
   private starHover = (e: any): void => {
-    const value = parseInt(e.target.value, 10);
-    const stars = document.querySelectorAll(".Item-Star");
+    const { submit } = this.state;
 
-    if (stars) {
-      const length = stars.length;
+    if (!submit) {
+      const value = parseInt(e.target.value, 10);
+      const stars = document.querySelectorAll(".Item-Star");
 
-      for (let i = 0; i < length; i++) {
-        if (i < value) {
-          stars[i].classList.add("Item-Star_active");
-        } else {
-          stars[i].classList.remove("Item-Star_active");
+      if (stars) {
+        const length = stars.length;
+
+        for (let i = 0; i < length; i++) {
+          if (i < value) {
+            stars[i].classList.add("Item-Star_active");
+          } else {
+            stars[i].classList.remove("Item-Star_active");
+          }
         }
       }
     }
@@ -183,14 +218,18 @@ class Item extends React.Component {
 
   // on mouse star leave
   private starLeave = (): void => {
-    const stars = document.querySelectorAll(".Item-Star");
+    const { submit } = this.state;
 
-    // reset active styles
-    if (stars) {
-      const length = stars.length;
+    if (!submit) {
+      const stars = document.querySelectorAll(".Item-Star");
 
-      for (let i = 0; i < length; i++) {
-        stars[i].classList.remove("Item-Star_active");
+      // reset active styles
+      if (stars) {
+        const length = stars.length;
+
+        for (let i = 0; i < length; i++) {
+          stars[i].classList.remove("Item-Star_active");
+        }
       }
     }
   };
