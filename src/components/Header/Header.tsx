@@ -6,6 +6,7 @@ import "./Header.scss";
 
 // components
 import Catalog from "../Catalog/Catalog";
+import CatalogRightSection from "../CatalogRightSection/CatalogRightSection";
 
 class Header extends React.Component {
   public state = {
@@ -42,22 +43,26 @@ class Header extends React.Component {
                 <li className={header("Link", { transform })}>Контакты</li>
               </ul>
 
-              <ul className={header("Menu")}>
-                {!login ? (
-                  <li className={header("Link")}>Регистрация</li>
-                ) : (
-                  <li className={header("Link", { type: "username" })}>
-                    Иван Иванов
-                  </li>
-                )}
+              {!transform ? (
+                <ul className={header("Menu")}>
+                  {!login ? (
+                    <li className={header("Link")}>Регистрация</li>
+                  ) : (
+                    <li className={header("Link", { type: "username" })}>
+                      Иван Иванов
+                    </li>
+                  )}
 
-                <li
-                  className={header("Link")}
-                  onClick={() => this.setState({ login: !login })}
-                >
-                  {login ? "Выйти" : "Войти"}
-                </li>
-              </ul>
+                  <li
+                    className={header("Link")}
+                    onClick={() => this.setState({ login: !login })}
+                  >
+                    {login ? "Выйти" : "Войти"}
+                  </li>
+                </ul>
+              ) : (
+                <CatalogRightSection theme="dark" />
+              )}
             </div>
           </div>
 

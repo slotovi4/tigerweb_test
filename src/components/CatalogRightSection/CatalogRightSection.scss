@@ -1,8 +1,11 @@
 $gray: #ededed;
 $primary: #ffec00;
+$dark: #6e6e6e;
 
 .CatalogRightSection {
   padding-right: 20px;
+  display: flex;
+  align-items: center;
 
   &-Button {
     background-color: $gray;
@@ -25,36 +28,61 @@ $primary: #ffec00;
     background-color: $primary;
   }
 
-  &-Button_type_heart:after {
+  &-Button:after {
     content: "";
     position: absolute;
     width: 25px;
     height: 100%;
-    background-image: url("./CatalogRightSection-heart.png");
     background-position: center;
     background-repeat: no-repeat;
     left: -28px;
+  }
+
+  &-Button_type_heart:after {
+    background-image: url("./CatalogRightSection-heart.png");
   }
 
   &-Button_type_files:after {
-    content: "";
-    position: absolute;
-    width: 25px;
-    height: 100%;
     background-image: url("./CatalogRightSection-files.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    left: -28px;
   }
 
   &-Button_type_basket:after {
-    content: "";
-    position: absolute;
-    width: 25px;
-    height: 100%;
     background-image: url("./CatalogRightSection-basket.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    left: -28px;
+  }
+
+  &-Text {
+    line-height: 22px;
+  }
+
+  &-Text_bold {
+    font-weight: 600;
+  }
+
+  // dark theme
+  &-Button_theme_dark {
+    background-color: $dark;
+    color: black;
+  }
+
+  &-Button_theme_dark {
+    &.CatalogRightSection-Button_type_heart:after {
+      background-image: url("./CatalogRightSection-heart_theme_dark.png");
+    }
+
+    &.CatalogRightSection-Button_type_files:after {
+      background-image: url("./CatalogRightSection-files_theme_dark.png");
+    }
+
+    &.CatalogRightSection-Button_type_basket:after {
+      background-image: url("./CatalogRightSection-basket_theme_dark.png");
+    }
+  }
+
+  &-Text_theme_dark {
+    color: #cccccc;
+
+    &.CatalogRightSection-Text_bold {
+      color: $primary;
+    }
   }
 }
