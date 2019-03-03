@@ -159,6 +159,7 @@ class Item extends React.Component {
 
   // submit
   private setRate = (e: any): void => {
+    e.preventDefault();
     const { submit } = this.state;
     const value = parseInt(e.target.value, 10);
 

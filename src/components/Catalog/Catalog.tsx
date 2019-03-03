@@ -6,6 +6,7 @@ import "./Catalog.scss";
 
 // components
 import CatalogMenu from "../CatalogMenu/CatalogMenu";
+import CatalogRightSection from "../CatalogRightSection/CatalogRightSection";
 
 class Catalog extends React.Component {
   public state = {
@@ -35,14 +36,7 @@ class Catalog extends React.Component {
             <div className={catalog("SearchButton")} />
           </div>
 
-          <div className={catalog("RightSection")}>
-            <span className={catalog("Button", { type: "heart" })}>0</span>
-            <span className={catalog("Button", { type: "files" })}>0</span>
-            <span className={catalog("Button", { type: "basket" })}>2</span>
-            <span>
-              На сумму - <b>23 140</b> руб.
-            </span>
-          </div>
+          <CatalogRightSection />
 
           {showMenu ? (
             <CatalogMenu close={() => this.setState({ showMenu: false })} />

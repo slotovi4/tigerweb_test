@@ -96,64 +96,6 @@ $primary: #ffec00;
     border-color: $primary;
   }
 
-  &-RightSection {
-    padding-right: 20px;
-  }
-
-  &-Button {
-    background-color: $gray;
-    font-weight: 600;
-    border-radius: 50%;
-    display: inline-block;
-    margin-right: 20px;
-    width: 22px;
-    height: 22px;
-    line-height: 22px;
-    text-align: center;
-    font-size: 12px;
-    margin-left: 28px;
-    position: relative;
-    cursor: pointer;
-    transition: all 0.3s ease-out;
-  }
-
-  &-Button:hover {
-    background-color: $primary;
-  }
-
-  &-Button_type_heart:after {
-    content: "";
-    position: absolute;
-    width: 25px;
-    height: 100%;
-    background-image: url("./Catalog-heart.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    left: -28px;
-  }
-
-  &-Button_type_files:after {
-    content: "";
-    position: absolute;
-    width: 25px;
-    height: 100%;
-    background-image: url("./Catalog-files.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    left: -28px;
-  }
-
-  &-Button_type_basket:after {
-    content: "";
-    position: absolute;
-    width: 25px;
-    height: 100%;
-    background-image: url("./Catalog-basket.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    left: -28px;
-  }
-
   &-MenuSection {
     display: block;
     width: 100%;

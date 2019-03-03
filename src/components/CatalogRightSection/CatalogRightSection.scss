@@ -1,0 +1,60 @@
+$gray: #ededed;
+$primary: #ffec00;
+
+.CatalogRightSection {
+  padding-right: 20px;
+
+  &-Button {
+    background-color: $gray;
+    font-weight: 600;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 20px;
+    width: 22px;
+    height: 22px;
+    line-height: 22px;
+    text-align: center;
+    font-size: 12px;
+    margin-left: 28px;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+  }
+
+  &-Button:hover {
+    background-color: $primary;
+  }
+
+  &-Button_type_heart:after {
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 100%;
+    background-image: url("./CatalogRightSection-heart.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    left: -28px;
+  }
+
+  &-Button_type_files:after {
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 100%;
+    background-image: url("./CatalogRightSection-files.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    left: -28px;
+  }
+
+  &-Button_type_basket:after {
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 100%;
+    background-image: url("./CatalogRightSection-basket.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    left: -28px;
+  }
+}

@@ -9,6 +9,7 @@ $primary: #ffec00;
     width: 100%;
     border-bottom: 1px solid $dark-gray;
     background-color: $gray;
+    transition: all 0.3s ease-out;
   }
 
   &-Container {
@@ -175,5 +176,31 @@ $primary: #ffec00;
     border-top-color: transparent;
     border-right-width: 8px;
     border-left-width: 8px;
+  }
+
+  // transform
+  &-HeaderBg_transform {
+    border: none;
+    background-color: black;
+    height: 40px;
+    position: fixed;
+    top: 0;
+    z-index: 101;
+  }
+
+  &-Link_transform {
+    color: white;
+
+    &.Header-Link_active {
+      color: $primary;
+
+      &::after {
+        border-bottom-color: white;
+      }
+    }
+  }
+
+  &-Link_transform:hover {
+    background-color: #262626;
   }
 }

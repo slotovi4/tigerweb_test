@@ -9,26 +9,37 @@ import Catalog from "../Catalog/Catalog";
 
 class Header extends React.Component {
   public state = {
-    login: false
+    login: false,
+    transform: false
   };
+
+  public componentWillMount() {
+    window.addEventListener("scroll", this.handleScroll, false);
+  }
+
+  public componentWillUnmount() {
+    window.removeEventListener("scroll", this.handleScroll, false);
+  }
 
   public render() {
     const header = cn("Header");
-    const { login } = this.state;
+    const { login, transform } = this.state;
 
     return (
       <React.Fragment>
         <section className={header()}>
-          <div className={header("HeaderBg")}>
+          <div className={header("HeaderBg", { transform })}>
             <div className={header("Container", { type: "menu" })}>
               <ul className={header("Menu")}>
-                <li className={header("Link", { active: true })}>Главная</li>
-                <li className={header("Link")}>О компании</li>
-                <li className={header("Link")}>Оплата</li>
-                <li className={header("Link")}>Доставка</li>
-                <li className={header("Link")}>Гарантия</li>
-                <li className={header("Link")}>Акции %</li>
-                <li className={header("Link")}>Контакты</li>
+                <li className={header("Link", { transform, active: true })}>
+                  Главная
+                </li>
+                <li className={header("Link", { transform })}>О компании</li>
+                <li className={header("Link", { transform })}>Оплата</li>
+                <li className={header("Link", { transform })}>Доставка</li>
+                <li className={header("Link", { transform })}>Гарантия</li>
+                <li className={header("Link", { transform })}>Акции %</li>
+                <li className={header("Link", { transform })}>Контакты</li>
               </ul>
 
               <ul className={header("Menu")}>
@@ -87,6 +98,15 @@ class Header extends React.Component {
       </React.Fragment>
     );
   }
+
+  // transform header
+  private handleScroll = () => {
+    if (window.pageYOffset >= 40) {
+      this.setState({ transform: true });
+    } else {
+      this.setState({ transform: false });
+    }
+  };
 }
 
 export default Header;
