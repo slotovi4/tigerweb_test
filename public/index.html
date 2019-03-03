@@ -16,5 +16,14 @@
       You need to enable JavaScript to run this app.
     </noscript>
     <main id="root"></main>
+    <script>
+      if (
+        "ontouchstart" in window ||
+        navigator.maxTouchPoints > 0 ||
+        navigator.msMaxTouchPoints > 0
+      ) {
+        document.body.classList.add("touch-available");
+      }
+    </script>
   </body>
 </html>

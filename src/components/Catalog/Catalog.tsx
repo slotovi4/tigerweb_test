@@ -3,6 +3,7 @@ import { cn } from "@bem-react/classname";
 
 // styles
 import "./Catalog.scss";
+import "./Catalog.touch.scss";
 
 // components
 import CatalogMenu from "../CatalogMenu/CatalogMenu";

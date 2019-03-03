@@ -3,6 +3,7 @@ import { cn } from "@bem-react/classname";
 
 // style
 import "./Item.scss";
+import "./Item.touch.scss";
 
 class Item extends React.Component {
   public state = {

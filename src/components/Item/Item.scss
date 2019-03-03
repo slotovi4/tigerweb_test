@@ -51,6 +51,7 @@ $lowdark: #6e6e6e;
     transition: all 0.3s ease-out;
     padding: 0;
     outline: none;
+    background-color: white;
   }
 
   &-SliderControll:hover {
@@ -238,6 +239,7 @@ $lowdark: #6e6e6e;
     outline: none;
     border: none;
     cursor: pointer;
+    background-color: transparent;
   }
 
   &-Star:last-child {

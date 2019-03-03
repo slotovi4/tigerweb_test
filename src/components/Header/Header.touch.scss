@@ -1,0 +1,69 @@
+$primary: #ffec00;
+
+.touch-available .Header {
+  &-Menu_type_left {
+    transform: translateX(-100%);
+    position: fixed;
+    transition: all 0.3s ease-out;
+    list-style: unset;
+    margin-top: 40px;
+    z-index: 101;
+    height: auto;
+    border: 2px solid $primary;
+
+    & .Header-Link {
+      display: list-item;
+      background-color: white;
+      color: black;
+      width: 100%;
+
+      &_active {
+        background-color: $primary;
+      }
+
+      &_active:after {
+        display: none;
+      }
+    }
+  }
+
+  &-Menu_open {
+    transform: translateX(0);
+  }
+
+  &-MobileMenu {
+    width: 40px;
+    height: 40px;
+    background-image: url("./Header-mobile.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 20px;
+    background-color: white;
+    cursor: pointer;
+  }
+
+  &-MobileMenu_close {
+    background-image: url("./Header-close.png");
+  }
+
+  &-Logo {
+    font-size: 25px;
+    border-width: 10px;
+    max-width: 200px;
+  }
+
+  &-Container {
+    justify-content: space-between;
+  }
+
+  &-PreLogo {
+    display: block;
+  }
+
+  @media screen and (max-width: 850px) {
+    &-InfoSection_type_city,
+    &-InfoSection_type_time {
+      display: none;
+    }
+  }
+}

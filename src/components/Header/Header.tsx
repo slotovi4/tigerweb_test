@@ -3,37 +3,55 @@ import { cn } from "@bem-react/classname";
 
 // styles
 import "./Header.scss";
+import "./Header.touch.scss";
 
 // components
 import Catalog from "../Catalog/Catalog";
 import CatalogRightSection from "../CatalogRightSection/CatalogRightSection";
 import CatalogMenu from "../CatalogMenu/CatalogMenu";
 
+const body = document.querySelector("body");
+
 class Header extends React.Component {
   public state = {
     login: false,
     transform: false,
-    showMenu: false
+    showMenu: false,
+    mobile: body && body.classList.contains("touch-available") ? true : false,
+    menuOpen: false
   };
+
+  public node: any;
 
   public componentWillMount() {
     window.addEventListener("scroll", this.handleScroll, false);
+    document.addEventListener("mousedown", this.handleClick, false);
   }
 
   public componentWillUnmount() {
     window.removeEventListener("scroll", this.handleScroll, false);
+    document.removeEventListener("mousedown", this.handleClick, false);
   }
 
   public render() {
     const header = cn("Header");
-    const { login, transform, showMenu } = this.state;
+    const { login, transform, showMenu, mobile, menuOpen } = this.state;
 
     return (
       <React.Fragment>
         <section className={header()}>
           <div className={header("HeaderBg", { transform })}>
-            <div className={header("Container", { type: "menu" })}>
-              <ul className={header("Menu")}>
+            <div
+              className={header("Container", { type: "menu" })}
+              ref={node => (this.node = node)}
+            >
+              {mobile ? (
+                <div
+                  className={header("MobileMenu", { close: menuOpen })}
+                  onClick={() => this.setState({ menuOpen: !menuOpen })}
+                />
+              ) : null}
+              <ul className={header("Menu", { type: "left", open: menuOpen })}>
                 <li className={header("Link", { transform, active: true })}>
                   Главная
                 </li>
@@ -120,6 +138,15 @@ class Header extends React.Component {
       </React.Fragment>
     );
   }
+
+  // check click location
+  private handleClick = (e: any) => {
+    if (this.node.contains(e.target)) {
+      return;
+    }
+
+    this.setState({ menuOpen: false });
+  };
 
   // transform header
   private handleScroll = () => {

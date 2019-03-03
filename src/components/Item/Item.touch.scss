@@ -1,0 +1,27 @@
+.touch-available .Item {
+  &-ContentHeader {
+    flex-direction: column;
+  }
+
+  &-ButtonsSection {
+    margin-top: 15px;
+  }
+
+  &-Price {
+    width: 100%;
+  }
+
+  @media screen and (max-width: 1000px) {
+    &-Section_type_left {
+      position: relative;
+    }
+
+    &-Section_type_right {
+      margin-left: 0;
+    }
+
+    &-SliderImage {
+      background-size: contain;
+    }
+  }
+}
