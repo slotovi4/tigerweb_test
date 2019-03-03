@@ -7,11 +7,13 @@ import "./Header.scss";
 // components
 import Catalog from "../Catalog/Catalog";
 import CatalogRightSection from "../CatalogRightSection/CatalogRightSection";
+import CatalogMenu from "../CatalogMenu/CatalogMenu";
 
 class Header extends React.Component {
   public state = {
     login: false,
-    transform: false
+    transform: false,
+    showMenu: false
   };
 
   public componentWillMount() {
@@ -24,7 +26,7 @@ class Header extends React.Component {
 
   public render() {
     const header = cn("Header");
-    const { login, transform } = this.state;
+    const { login, transform, showMenu } = this.state;
 
     return (
       <React.Fragment>
@@ -35,6 +37,14 @@ class Header extends React.Component {
                 <li className={header("Link", { transform, active: true })}>
                   Главная
                 </li>
+                {transform ? (
+                  <li
+                    className={header("Link", { transform, catalog: true })}
+                    onClick={() => this.setState({ showMenu: !showMenu })}
+                  >
+                    Каталог
+                  </li>
+                ) : null}
                 <li className={header("Link", { transform })}>О компании</li>
                 <li className={header("Link", { transform })}>Оплата</li>
                 <li className={header("Link", { transform })}>Доставка</li>
@@ -63,6 +73,13 @@ class Header extends React.Component {
               ) : (
                 <CatalogRightSection theme="dark" />
               )}
+
+              {showMenu ? (
+                <CatalogMenu
+                  theme="header"
+                  close={() => this.setState({ showMenu: false })}
+                />
+              ) : null}
             </div>
           </div>
 

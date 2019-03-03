@@ -258,4 +258,23 @@ $primary: #ffec00;
     display: inline-block;
     width: 100%;
   }
+
+  // theme header
+  &-Link_theme_header {
+    height: 40px;
+    line-height: 40px;
+    float: left;
+    font-size: 14px;
+    padding: 0 10px;
+
+    &.CatalogMenu-Link_type_parent {
+      margin-left: 70px;
+      width: 90px;
+      text-transform: unset;
+    }
+
+    &.CatalogMenu-Link_type_parent::after {
+      right: 5px;
+    }
+  }
 }

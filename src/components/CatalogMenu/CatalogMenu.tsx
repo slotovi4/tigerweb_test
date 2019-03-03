@@ -9,27 +9,31 @@ import PopupBg from "../PopupBg/PopupBg";
 
 interface IProps {
   close: () => void;
+  theme?: "header";
 }
 
 class CatalogMenu extends React.Component<IProps> {
   public render() {
     const menu = cn("CatalogMenu");
-    const { close } = this.props;
+    const { close, theme } = this.props;
 
     return (
       <React.Fragment>
         <section className={menu()}>
           <ul className={menu("Menu")}>
-            <li className={menu("Link", { type: "parent" })} onClick={close}>
-              каталог
+            <li
+              className={menu("Link", { type: "parent", theme })}
+              onClick={close}
+            >
+              Каталог
             </li>
             <li
-              className={menu("Link", { type: "active" })}
+              className={menu("Link", { type: "active", theme })}
               onClick={this.menuClick}
             >
               home & garden / бытовая техника
             </li>
-            <li className={menu("Link")} onClick={this.menuClick}>
+            <li className={menu("Link", { theme })} onClick={this.menuClick}>
               professional / профессиональная техника
             </li>
           </ul>

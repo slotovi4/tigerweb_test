@@ -80,6 +80,24 @@ $primary: #ffec00;
     border-left-width: 8px;
   }
 
+  &-Link_catalog {
+    padding-right: 30px;
+    width: 90px;
+  }
+
+  &-Link_catalog::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    margin-top: -3px;
+    right: 10px;
+    border: 6px solid white;
+    border-right-color: transparent;
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+    border-radius: 2px;
+  }
+
   &-InfoSection {
     min-width: 210px;
     position: relative;
