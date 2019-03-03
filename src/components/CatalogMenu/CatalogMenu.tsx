@@ -3,6 +3,7 @@ import { cn } from "@bem-react/classname";
 
 // styles
 import "./CatalogMenu.scss";
+import "./CatalogMenu.touch.scss";
 
 // components
 import PopupBg from "../PopupBg/PopupBg";
@@ -10,19 +11,20 @@ import PopupBg from "../PopupBg/PopupBg";
 interface IProps {
   close: () => void;
   theme?: "header";
+  mobile?: boolean;
 }
 
 class CatalogMenu extends React.Component<IProps> {
   public render() {
     const menu = cn("CatalogMenu");
-    const { close, theme } = this.props;
+    const { close, theme, mobile } = this.props;
 
     return (
       <React.Fragment>
-        <section className={menu()}>
+        <section className={menu({ mobile })}>
           <ul className={menu("Menu")}>
             <li
-              className={menu("Link", { type: "parent", theme })}
+              className={menu("Link", { type: "parent", theme, mobile })}
               onClick={close}
             >
               Каталог

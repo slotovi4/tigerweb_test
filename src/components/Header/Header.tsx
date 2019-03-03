@@ -58,7 +58,9 @@ class Header extends React.Component {
                 {transform ? (
                   <li
                     className={header("Link", { transform, catalog: true })}
-                    onClick={() => this.setState({ showMenu: !showMenu })}
+                    onClick={() =>
+                      this.setState({ showMenu: !showMenu, menuOpen: false })
+                    }
                   >
                     Каталог
                   </li>
@@ -95,6 +97,7 @@ class Header extends React.Component {
               {showMenu ? (
                 <CatalogMenu
                   theme="header"
+                  mobile={mobile}
                   close={() => this.setState({ showMenu: false })}
                 />
               ) : null}

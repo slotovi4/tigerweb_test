@@ -1,0 +1,38 @@
+.touch-available .CatalogMenu {
+  &_mobile {
+    margin-top: 40px;
+  }
+
+  &-Link {
+    width: 100%;
+
+    &_type_active::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      margin-top: -7px;
+      right: 20px;
+      border: 6px solid white;
+      border-top-color: transparent;
+      border-left-color: transparent;
+      border-bottom-color: transparent;
+      border-radius: 2px;
+      bottom: unset;
+      left: unset;
+    }
+
+    &_type_parent.CatalogMenu-Link_mobile {
+      margin-left: 0;
+
+      &::after {
+        right: 15px;
+      }
+    }
+  }
+
+  &-Content {
+    padding: 30px 20px;
+    display: flex;
+    overflow-x: auto;
+  }
+}
