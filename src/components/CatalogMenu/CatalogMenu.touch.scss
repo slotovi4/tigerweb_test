@@ -35,4 +35,13 @@
     display: flex;
     overflow-x: auto;
   }
+
+  &-Card_type_footer {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+
+  &-Card_type_footer:last-child {
+    margin-bottom: 0;
+  }
 }

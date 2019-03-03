@@ -3,6 +3,7 @@ import { cn } from "@bem-react/classname";
 
 // styles
 import "./ItemMenu.scss";
+import "./ItemMenu.touch.scss";
 
 class ItemMenu extends React.Component {
   public render() {

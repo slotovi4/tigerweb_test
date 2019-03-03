@@ -3,6 +3,7 @@ import { cn } from "@bem-react/classname";
 
 // styles
 import "./ItemHeader.scss";
+import "./ItemHeader.touch.scss";
 
 class ItemHeader extends React.Component {
   public render() {

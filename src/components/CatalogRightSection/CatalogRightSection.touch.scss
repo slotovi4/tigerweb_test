@@ -1,0 +1,23 @@
+.touch-available .CatalogRightSection {
+  @media screen and (max-width: 500px) {
+    & {
+      padding-right: 0;
+    }
+
+    &-Button {
+      margin-right: 6px;
+      margin-left: 20px;
+
+      &:after {
+        width: 15px;
+        background-size: 15px;
+        left: -20px;
+      }
+    }
+
+    &-Text {
+      font-size: 12px;
+      line-height: 12px;
+    }
+  }
+}

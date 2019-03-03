@@ -1,0 +1,14 @@
+.touch-available .ItemMenu {
+  &-Link_current {
+    text-overflow: ellipsis;
+    max-width: 50px;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  @media screen and (max-width: 500px) {
+    &-Link_current {
+      display: none;
+    }
+  }
+}

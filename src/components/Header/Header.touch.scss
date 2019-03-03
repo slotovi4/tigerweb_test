@@ -66,4 +66,14 @@ $primary: #ffec00;
       display: none;
     }
   }
+
+  @media screen and (max-width: 500px) {
+    &-InfoSection_type_tel {
+      min-width: 175px;
+    }
+
+    &-Logo {
+      font-size: 18px;
+    }
+  }
 }

@@ -3,6 +3,7 @@ import { cn } from "@bem-react/classname";
 
 // style
 import "./CatalogRightSection.scss";
+import "./CatalogRightSection.touch.scss";
 
 interface IProps {
   theme?: "dark";

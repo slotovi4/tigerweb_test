@@ -37,7 +37,9 @@ class Catalog extends React.Component {
             <div className={catalog("SearchButton")} />
           </div>
 
-          <CatalogRightSection />
+          <div className={catalog("InfoSection")}>
+            <CatalogRightSection />
+          </div>
 
           {showMenu ? (
             <CatalogMenu close={() => this.setState({ showMenu: false })} />
