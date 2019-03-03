@@ -2,6 +2,7 @@
   "name": "compilation-react-ts-scss",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://slotovi4.github.io/tigerweb_test/build/",
   "dependencies": {
     "axios": "^0.18.0",
     "react": "^16.8.3",
